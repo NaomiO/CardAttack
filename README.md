@@ -2,9 +2,9 @@
 
 ![Emv Card Example](https://blog.payjunction.com/hubfs/BLOG/FEATURED%20IMAGES/emv-card-reader.svg)
 
-This is an educational project as a part of my studies of computer sciences at the University of Ariel of the course: **Network Protection**.
-This project aims to demonstrate the security failures on cret cards using **EMV technology**.
-[**EMV**- Europay Mastercard Visa](https://en.wikipedia.org/wiki/EMV) -> Click on this link to read about the technology. 
+This is an educational project as part of our studies of computer sciences at Ariel University for the class: "Network Protection".
+This project aims to demonstrate the security failures on credit cards using EMV technology.
+[EMV- Europay Mastercard Visa](https://en.wikipedia.org/wiki/EMV) -> Click on this link to read about the technology. 
 
 
 
@@ -16,25 +16,26 @@ EMV cards are smart cards, also called chip cards, integrated circuit cards, or 
 
 ###  Type of the Attack
 
-[**Man in the middle**](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)
+[Man in the middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)
 
 EMV is the international protocol standard for smartcard payment and is used in over 9 billion cards worldwide. Despite the standard’s advertised security, various issues have been previously uncovered, deriving from logical flaws that are hard to spot in EMV’s lengthy and complex specification, running over 2,000 pages.
 
 
-### Explain Attack 
-The purpose of this project is to read the banking information of the credit card: Card number, Expiration, Last payments
-The principle is the following ->  The Emv card using contactless, uses the nfc.
+### Some words on the attack 
+The main purpose of this project is to obtain the banking information of a contactless credit card using only "contact" for a couple of seconds.
 
-By reading the card with an nfc reader we get a code in hexadecimal form.
+The information we managed to retrieve is the card number, the expiration date and the last payments done with the card.
+Someone with bad purposes could use those information and steal from it.
 
-> For example: 6F1A840E315041592E5359532E4444463031A5088801025F2D02656E'
+The Emv card uses contactless method, that is why we need to use a nfc reader and when we place it on the nfc we get a code in hexadecimal form (see an example: 6F1A840E315041592E5359532E4444463031A5088801025F2D02656E).
 
-As this code is part of the ISO standardization, we know its working principles (encapsulation) 
+As this code is part of the ISO standardization, we had to understand how it works and how the code (encapsulation) needs to be read :
+we have to separate the hexadecimal code received so that each part gives us a specific information.
 
-So we have to cut the hexadecimal code received and we get the information we want.
-The principle is a bit the same as http where we have a header and a body.
- The header announces where the information is located.
- ![Nfc Record](https://images3.programmersought.com/680/4d/4da995268cfebfb0ba4f8cc91a93aa48.png)
+This method is similar to the http protocol messages where we have a header and a body.
+The header announces where the information is located.
+ 
+ <img src="https://images3.programmersought.com/680/4d/4da995268cfebfb0ba4f8cc91a93aa48.png" style="text-align:center;"/>
 
 ###  ISO 
 > [IEC 14443 -> Contactless cards](https://en.wikipedia.org/wiki/ISO/IEC_14443)
@@ -55,7 +56,6 @@ The principle is a bit the same as http where we have a header and a body.
 
 ### What you need to run this project
 
-[Decrypt Help](https://emvlab.org/main/) 
 First you need to install the following tools :
 > Card Driver (Step 1)
 
@@ -64,8 +64,8 @@ First you need to install the following tools :
     $ sudo apt-get install libpcsclite1
     $ sudo apt-get install libusb-dev
     $ sudo apt-get install libnfc-bin
-    $ sudo apt-get libnfc-dev 
-    $ sudo apt-get libnfc5
+    $ sudo apt-get install libnfc-dev 
+    $ sudo apt-get install libnfc5
     
 > Fix Card Nfc (Step 2)
 
@@ -79,6 +79,9 @@ First you need to install the following tools :
     sudo apt-get install gcc
     sudo apt-get install g++
     sudo apt-get install make
+ 
+ [Decrypt Help](https://emvlab.org/main/) - to visualize the data encapsulated
+   
 
 #### :point_right: Run the project :point_left:
 
@@ -90,14 +93,12 @@ First you need to install the following tools :
 > To run and save output in file 
 
     ./hackCard >> OutputCard.txt 
-> Clean after run 
 
-    $ make Clean 
 
-### Colaborators
+### Collaborators
 
-- Naomi Oyer -- [*Github*](https://github.com/NaomiO)
-- Shalhevet Gamliel -- [*Github*](https://github.com/ShalhevetGamliel) 
+- Naomi Oyer -- [Github](https://github.com/NaomiO)
+- Shalhevet Gamliel -- [Github](https://github.com/ShalhevetGamliel) 
 
 ### License
 
