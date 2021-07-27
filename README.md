@@ -35,7 +35,7 @@ we have to separate the hexadecimal code received so that each part gives us a s
 This method is similar to the http protocol messages where we have a header and a body.
 The header announces where the information is located.
  
- <img src="https://images3.programmersought.com/680/4d/4da995268cfebfb0ba4f8cc91a93aa48.png" style="text-align:center;"/>
+ <img src="https://images3.programmersought.com/680/4d/4da995268cfebfb0ba4f8cc91a93aa48.png" style="float:right;"/>
 
 ###  ISO 
 > [IEC 14443 -> Contactless cards](https://en.wikipedia.org/wiki/ISO/IEC_14443)
