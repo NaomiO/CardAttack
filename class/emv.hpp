@@ -140,6 +140,7 @@ class EmvClass {
                 TAG_9F38({0, {0}}),
                 Discretionaire({0, {0}}),
                 Tag57({0, {0}}),
+                test({0, {0}}),
                 _logTag88(0),
                 _logCount(0),
                 LogCard({0, {0}}),
