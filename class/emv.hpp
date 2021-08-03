@@ -30,7 +30,9 @@ class EmvClass {
 
       DataUnit TAG_9F38; 
       DataUnit Discretionaire; 
-      DataUnit Tag57; 
+      DataUnit Tag57;
+      DataUnit test;
+
 
       unsigned char _logTag88;
       unsigned char _logCount;
