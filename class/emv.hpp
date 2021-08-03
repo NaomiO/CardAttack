@@ -261,7 +261,7 @@ class EmvClass {
      
       void GetDetails() const {
               cout << "Name Card's" << ": " << CardUserName << endl;
-                      EMV temp = getPPSE();
+              EMV temp = (EMV)getPPSE();
 
               cout << "Type of card1" << ": " << temp.name << endl;
               
