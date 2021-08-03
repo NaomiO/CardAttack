@@ -81,6 +81,8 @@ class EmvClass {
                 unsigned char len = abtRx[++i];
                 i++;
                 memcpy(app.name, &abtRx[i], len);
+                                memcpy(test.value, &abtRx[i], len);
+
                 app.name[len] = 0;
                 i += len - 1;
               }
