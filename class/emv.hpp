@@ -264,9 +264,9 @@ class EmvClass {
                       list<EMV> temp;
               temp = getPPSE();
 
-              cout << "Type of card1" << ": " << temp.pop_back << endl;
-              cout << "Type of card1" << ": " << temp.pop_front << endl;
-              unsigned char const* buffer = Tag57.value;
+              cout << "Type of card1" << ": " << temp << endl;
+
+        unsigned char const* buffer = Tag57.value;
 
               unsigned int i;
 
