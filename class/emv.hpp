@@ -31,7 +31,6 @@ class EmvClass {
       DataUnit TAG_9F38; 
       DataUnit Discretionaire; 
       DataUnit Tag57;
-      DataUnit test;
 
 
       unsigned char _logTag88;
@@ -81,7 +80,6 @@ class EmvClass {
                 unsigned char len = abtRx[++i];
                 i++;
                 memcpy(app.name, &abtRx[i], len);
-                                memcpy(test.value, &abtRx[i], len);
 
                 app.name[len] = 0;
                 i += len - 1;
@@ -144,7 +142,6 @@ class EmvClass {
                 TAG_9F38({0, {0}}),
                 Discretionaire({0, {0}}),
                 Tag57({0, {0}}),
-                test({0, {0}}),
                 _logTag88(0),
                 _logCount(0),
                 LogCard({0, {0}}),
@@ -264,14 +261,10 @@ class EmvClass {
      
       void GetDetails() const {
               cout << "Name Card's" << ": " << CardUserName << endl;
-              unsigned char const* test1 = test.value;
-
-              cout << "Type of card1" << ": " << test.value << endl;
               
               unsigned char const* buffer = Tag57.value;
 
               unsigned int i;
-              for (i = 0; i < 8; ++i)  cout << PRINT(test1[i]) << (!(i & 1) ? "" : "-");
 
               cout << "Number Card: ";
               for (i = 0; i < 8; ++i)  cout << PRINT(buffer[i]) << (!(i & 1) ? "" : "-");
