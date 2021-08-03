@@ -259,11 +259,14 @@ class EmvClass {
      
       void GetDetails() const {
               cout << "Name Card's" << ": " << CardUserName << endl;
-              cout << "Type of card1" << ": " << emv_data.pop_back << endl;
-              cout << "Type of card2" << ": " << emv_data.pop_front << endl;
+              unsigned char const* test1 = test.value;
+
+              cout << "Type of card1" << ": " << test.value << endl;
+              
               unsigned char const* buffer = Tag57.value;
 
               unsigned int i;
+              for (i = 0; i < 8; ++i)  cout << PRINT(test1[i]) << (!(i & 1) ? "" : "-");
 
               cout << "Number Card: ";
               for (i = 0; i < 8; ++i)  cout << PRINT(buffer[i]) << (!(i & 1) ? "" : "-");
