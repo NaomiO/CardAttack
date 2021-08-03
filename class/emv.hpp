@@ -261,12 +261,8 @@ class EmvClass {
      
       void GetDetails() const {
               cout << "Name Card's" << ": " << CardUserName << endl;
-                      list<EMV> temp;
-              temp = getPPSE();
-
-              cout << "Type of card1" << ": " << temp << endl;
-
-        unsigned char const* buffer = Tag57.value;
+        
+              unsigned char const* buffer = Tag57.value;
 
               unsigned int i;
 
